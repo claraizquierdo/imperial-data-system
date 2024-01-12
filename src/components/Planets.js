@@ -10,25 +10,30 @@ const Planets = () => {
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [totalPlanets, setTotalPlanets] = useState(0);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true);
         getPlanets(page, PAGE_SIZE)
         .then(response => {
             if (response.results) {
                 setTotalPlanets(response.total_records);
                 setTotalPages(response.total_pages);
                 setPlanetList(response.results);
+                setLoading(false);
             }
         });
 
     }, [page]);
     return (
         <>
-            {planetList.map((planet) => (
-                <div key={planet.uid}>
-                    <p>{planet.name}</p>
-                </div>
-            ))}
+            {loading ? <span>Loading...</span>: (
+                planetList.map((planet) => (
+                    <div key={planet.uid}>
+                        <p>{planet.properties.name}</p>
+                    </div>
+                ))
+            )}
             <Pagination 
                 page={page}
                 pageSize={PAGE_SIZE}
