@@ -21,11 +21,20 @@ export const getPlanets = async (page, pageSize) => {
     }
 }
 
-export const getStarships = async (page, pageSize) => {
+export const getStarships = async () => {
     try {
-        const response = await fetch(`${BASE_URL}/starships?page=${page}&limit=${pageSize}`);
+        const response = await fetch(`${BASE_URL}/starships?page=!&limit=10`);
         const data = await response.json();
-        return data;
+
+        const fetchArray = data.results.map(ship => fetch(ship.url));
+        const responses = await Promise.all(fetchArray);
+
+        const shipFullInfo = await Promise.all(responses.map(response => response.json()));
+
+        return {
+            total_records: data.total_records,
+            results: shipFullInfo.map(ship => ship.result),
+        };
     } catch (error) {
         console.warn(error);
         throw error;

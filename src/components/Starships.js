@@ -1,9 +1,9 @@
 import {getStarships} from '../services/services';
 import Pagination from './Pagination';
 
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 5;
 
 const Starships = () => {
     const [starshipsList, setStarshipsList] = useState([]);
@@ -11,22 +11,28 @@ const Starships = () => {
     const [totalPages, setTotalPages] = useState(1);
     const [totalStarships, setTotalStarships] = useState(0);
 
+    const visibleStarships = useMemo(() => {
+        return starshipsList.slice(PAGE_SIZE*(page-1), PAGE_SIZE*page)
+    }, [starshipsList, page])
+
     useEffect(() => {
-        getStarships(page, PAGE_SIZE)
+        getStarships()
         .then(response => {
+            console.log(response);
             if (response.results) {
-                setTotalStarships(response.total_records);
-                setTotalPages(response.total_pages);
+                setTotalStarships(response.results.length);
+                setTotalPages(Math.floor(response.results.length/PAGE_SIZE));
                 setStarshipsList(response.results);
             }
         });
 
-    }, [page]);
+    }, []);
+
     return (
         <>
-            {starshipsList.map((ship) => (
+            {visibleStarships.map((ship) => (
                 <div key={ship.uid}>
-                    <p>{ship.name}</p>
+                    <p>{ship.properties.name}</p>
                 </div>
             ))}
             <Pagination 
