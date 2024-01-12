@@ -1,5 +1,6 @@
 import {getPlanets} from '../services/services';
 import Pagination from './Pagination';
+import Card from './Card';
 
 import {useState, useEffect} from 'react';
 
@@ -29,9 +30,12 @@ const Planets = () => {
         <>
             {loading ? <span>Loading...</span>: (
                 planetList.map((planet) => (
-                    <div key={planet.uid}>
-                        <p>{planet.properties.name}</p>
-                    </div>
+                    <Card
+                        key={planet.uid}
+                        title={planet.properties.name}
+                        description="The description"
+                        imageUrl={`assets/planets/${planet.properties.name.toLowerCase()}.png`}
+                    />
                 ))
             )}
             <Pagination 
