@@ -2,7 +2,7 @@ import { getStarships } from '../services/services';
 import Pagination from './Pagination';
 import Card from './Card';
 import Loading from './Loading';
-import '../css/Starships.scss';
+import '../css/components/Starships.scss';
 
 import { useState, useEffect, useMemo } from 'react';
 

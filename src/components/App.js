@@ -1,4 +1,4 @@
-import '../css/App.scss';
+import '../css/components/App.scss';
 import Navigation from './Navigation';
 import Planets from './Planets';
 import Starships from './Starships';

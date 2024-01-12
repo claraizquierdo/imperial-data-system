@@ -2,7 +2,7 @@ import { getPlanets } from '../services/services';
 import Pagination from './Pagination';
 import Card from './Card';
 import Loading from './Loading';
-import '../css/Planets.scss';
+import '../css/components/Planets.scss';
 
 import { useState, useEffect } from 'react';
 

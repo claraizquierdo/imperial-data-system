@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/Navigation.scss';
+import '../css/components/Navigation.scss';
 
 const Navigation = ({ activePage, setActivePage }) => {
     return (

@@ -1,4 +1,4 @@
-import '../css/Pagination.scss';
+import '../css/components/Pagination.scss';
 
 const Pagination = ({page, pageSize, totalPages, totalRecords, assetType, handlePageChange}) => {
     return (

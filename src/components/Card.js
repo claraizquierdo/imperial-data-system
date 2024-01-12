@@ -1,4 +1,4 @@
-import '../css/Card.scss';
+import '../css/components/Card.scss';
 
 import React, { useState } from 'react';
 
