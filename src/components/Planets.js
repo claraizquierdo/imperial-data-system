@@ -30,27 +30,27 @@ const Planets = () => {
     return (
         <div className="planets">
             <h2 className="h2 planets__title">Planets</h2>
-            <div className="planets__list">
-                {loading ? <span>Loading...</span>: (
-                    planetList.map((planet) => (
-                        <Card
-                            key={planet.uid}
-                            title={planet.properties.name}
-                            description={planet.properties.terrain}
-                            population={planet.properties.population}
-                            imageUrl={`assets/planets/${planet.properties.name.toLowerCase()}.png`}
-                        />
-                    ))
-                )}
-            </div>
-            <Pagination 
-                page={page}
-                pageSize={PAGE_SIZE}
-                totalPages={totalPages}
-                totalRecords={totalPlanets}
-                handlePageChange={setPage}
-                assetType="planets"
-            />
+                <div className="planets__list">
+                    {loading ? <span>Loading...</span>: (
+                        planetList.map((planet) => (
+                            <Card
+                                key={planet.uid}
+                                title={planet.properties.name}
+                                description={planet.properties.terrain}
+                                population={planet.properties.population}
+                                imageUrl={`assets/planets/${planet.properties.name.toLowerCase()}.png`}
+                            />
+                        ))
+                    )}
+                </div>
+                <Pagination 
+                    page={page}
+                    pageSize={PAGE_SIZE}
+                    totalPages={totalPages}
+                    totalRecords={totalPlanets}
+                    handlePageChange={setPage}
+                    assetType="planets"
+                />
         </div>
     );
   };

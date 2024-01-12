@@ -36,7 +36,8 @@
   color: white;
   display: flex;
   height: 40px;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 24px;
 
   .link {
     display: inline-block;
