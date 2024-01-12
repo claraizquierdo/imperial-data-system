@@ -3,7 +3,7 @@ import '../css/Navigation.scss';
 
 const Navigation = ({setActivePage}) => {
   return (
-    <nav class="navigation">
+    <nav className="navigation">
       <ul>
         <li>
           <button onClick={() =>setActivePage("planets")}>Planets</button>
