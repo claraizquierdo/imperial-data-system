@@ -1,3 +1,5 @@
+@import 'variables';
+
 .planets {
     &__title {
         margin-left: 20px;
@@ -8,4 +10,8 @@
         display: flex;
         flex-wrap: wrap;
     }
+
+    @media only screen and (min-width: $tablet) {
+        flex-grow: 1;
+     }
 }
