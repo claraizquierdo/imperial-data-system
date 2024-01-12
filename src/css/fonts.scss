@@ -1,5 +1,94 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.eot?fha49n');
+    src: url('fonts/icomoon.eot?fha49n#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?fha49n') format('truetype'),
+        url('fonts/icomoon.woff?fha49n') format('woff'),
+        url('fonts/icomoon.svg?fha49n#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bell:before {
+    content: "\e951";
+}
+
+.icon-user:before {
+    content: "\e971";
+}
+
+.icon-users:before {
+    content: "\e972";
+}
+
+.icon-rocket:before {
+    content: "\e9a5";
+}
+
+.icon-truck:before {
+    content: "\e9b0";
+}
+
+.icon-menu:before {
+    content: "\e9bd";
+}
+
+.icon-earth:before {
+    content: "\e9ca";
+}
+
+.icon-circle-right:before {
+    content: "\ea42";
+}
+
+.icon-circle-left:before {
+    content: "\ea44";
+}
+
+.icon-sort-amount-asc:before {
+    content: "\ea4c";
+}
+
+.icon-sort-amount-desc:before {
+    content: "\ea4d";
+}
+
+.icon-mail:before {
+    content: "\ea83";
+}
+
+.icon-mail2:before {
+    content: "\ea84";
+}
+
+.icon-linkedin:before {
+    content: "\eac9";
+}
+
+.icon-linkedin2:before {
+    content: "\eaca";
+}
+
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    font-family: 'Calibri', 'Roboto', 'Oxygen',
         'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
         sans-serif;
     -webkit-font-smoothing: antialiased;
