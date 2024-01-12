@@ -1,7 +1,8 @@
 @import 'variables';
 
 .navigation {
-    padding: 12px;
+    padding-bottom: 12px;
+    padding-top: 12px;
 
     ul {
         display: flex;
@@ -26,11 +27,10 @@
     }
 
     @media only screen and (min-width: $tablet) {
-        width: 15%;
+        border-right: 2px solid $lightGrey;
         flex-shrink: 0;
-        height: calc(100vh - 120px);
-        margin-top: 24px;
-        padding: 0;
+        padding: 24px 0 0;
+        width: 16%;
 
         ul { 
             flex-direction: column;
