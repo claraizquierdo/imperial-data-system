@@ -1,0 +1,21 @@
+@import 'variables';
+
+.link {
+    color: $darkBlue;
+    text-decoration: none;
+
+    &--dark {
+        color: $ligthBlue;
+    }
+}
+
+
+.h1 {
+    font-size: 16px;
+}
+
+@media only screen and (min-width: $tablet) {
+    .h1 {
+        font-size: 24px;
+    }   
+}

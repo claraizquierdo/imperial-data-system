@@ -1,13 +1,41 @@
+@import 'variables';
+
 .header {
   align-items: center;
-  background-color: #282c34;
+  background-color: $dark;
   color: white;
   display: flex;
   height: 80px;
+
+  .logo {
+    height: 35px;
+    margin: 0 12px;
+  }
+
+  @media only screen and (min-width: $tablet) {
+    .logo {
+      height: 50px;
+    }
+  }
 }
 
-.logo {
-  height: 50px;
-  margin: 0 12px;
+.main {
+  @media only screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.footer {
+  align-items: center;
+  background-color: $dark;
+  color: white;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+
+  .link {
+    display: inline-block;
+    margin: 0 4px;
+  }
 }
 

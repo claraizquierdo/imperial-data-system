@@ -1,3 +1,5 @@
+@import 'variables';
+
 .navigation {
     padding: 12px;
 
@@ -7,6 +9,50 @@
 
         li {
             margin-right: 12px;
+        }
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            margin-right: 12px;
+        }
+
+        &.active {
+            border-bottom: 1px solid $primary;
+        }
+    }
+
+    @media only screen and (min-width: $tablet) {
+        width: 15%;
+        flex-shrink: 0;
+        height: calc(100vh - 120px);
+        margin-top: 24px;
+        padding: 0;
+
+        ul { 
+            flex-direction: column;
+
+            li {
+                margin-right: 0;
+            }
+        }
+
+        .button {
+            padding-left: 24px;
+            padding-right: 24px;
+            width: 100%;
+
+            &:hover {
+                background-color: $ligthBlue;
+            }
+
+            &.active {
+                background-color: $ligthBlue;
+                border-bottom: none;
+            }
         }
     }
 }
