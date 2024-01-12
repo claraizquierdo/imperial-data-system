@@ -1,0 +1,21 @@
+@import '../base/variables';
+
+.header {
+    align-items: center;
+    background-color: $dark;
+    color: white;
+    display: flex;
+    height: 80px;
+    padding: 0 24px;
+
+    &__logo {
+        height: 35px;
+        padding-right: 24px;
+    }
+
+    @media only screen and (min-width: $tablet) {
+        &__logo {
+            height: 50px;
+        }
+    }
+}

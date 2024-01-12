@@ -1,25 +1,5 @@
 @import '../base/variables';
 
-.header {
-  align-items: center;
-  background-color: $dark;
-  color: white;
-  display: flex;
-  height: 80px;
-  padding: 0 24px;
-
-  .logo {
-    height: 35px;
-    padding-right: 24px;
-  }
-
-  @media only screen and (min-width: $tablet) {
-    .logo {
-      height: 50px;
-    }
-  }
-}
-
 .main {
   margin: 0 24px;
 

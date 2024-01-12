@@ -1,4 +1,6 @@
 import '../css/components/App.scss';
+import Header from './Header';
+import Footer from './Footer';
 import Navigation from './Navigation';
 import Planets from './Planets';
 import Starships from './Starships';
@@ -8,12 +10,7 @@ function App() {
     const [activePage, setActivePage] = useState("planets");
     return (
         <div>
-            <header className="header">
-                <img src="logo.png" className="logo" alt="logo" />
-                <h1 className="h1">
-                    Imperial destroyers center
-                </h1>
-            </header>
+            <Header/>
             <main className="main">
                 <Navigation activePage={activePage} setActivePage={setActivePage}/>
                 {activePage === "planets" ? 
@@ -22,9 +19,7 @@ function App() {
                     <Starships />
                 }
             </main>
-            <footer className="footer">
-                App created by <a className="link link--dark" href="https://github.com/claraizquierdo">Clara Izquierdo</a> with love
-            </footer>
+            <Footer/>
         </div>
     );
 }
