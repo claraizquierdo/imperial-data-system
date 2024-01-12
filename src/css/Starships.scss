@@ -1,0 +1,18 @@
+@import 'variables';
+
+.starships {
+    &__title,
+    &__filters {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    @media only screen and (min-width: $tablet) {
+        flex-grow: 1;
+     }
+}

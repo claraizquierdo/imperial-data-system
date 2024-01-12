@@ -1,9 +1,10 @@
-import {getPlanets} from '../services/services';
+import { getPlanets } from '../services/services';
 import Pagination from './Pagination';
 import Card from './Card';
+import Loading from './Loading';
 import '../css/Planets.scss';
 
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 const PAGE_SIZE = 8;
 
@@ -17,42 +18,46 @@ const Planets = () => {
     useEffect(() => {
         setLoading(true);
         getPlanets(page, PAGE_SIZE)
-        .then(response => {
-            if (response.results) {
-                setTotalPlanets(response.total_records);
-                setTotalPages(response.total_pages);
-                setPlanetList(response.results);
-                setLoading(false);
-            }
-        });
+            .then(response => {
+                if (response.results) {
+                    setTotalPlanets(response.total_records);
+                    setTotalPages(response.total_pages);
+                    setPlanetList(response.results);
+                    setLoading(false);
+                }
+            });
 
     }, [page]);
     return (
         <div className="planets">
             <h2 className="h2 planets__title">Planets</h2>
-                <div className="planets__list">
-                    {loading ? <span>Loading...</span>: (
-                        planetList.map((planet) => (
+            {loading ? <Loading /> : (
+                <>
+                    <div className="planets__list">
+                        {planetList.map((planet) => (
                             <Card
                                 key={planet.uid}
                                 title={planet.properties.name}
-                                description={planet.properties.terrain}
-                                population={planet.properties.population}
+                                subtitle={planet.properties.terrain}
+                                description={`Population: ${planet.properties.population}`}
                                 imageUrl={`assets/planets/${planet.properties.name.toLowerCase()}.png`}
+                                defaultImageUrl="assets/planets/default.png"
                             />
-                        ))
-                    )}
-                </div>
-                <Pagination 
-                    page={page}
-                    pageSize={PAGE_SIZE}
-                    totalPages={totalPages}
-                    totalRecords={totalPlanets}
-                    handlePageChange={setPage}
-                    assetType="planets"
-                />
+                        ))}
+                    </div>
+                    <Pagination
+                        page={page}
+                        pageSize={PAGE_SIZE}
+                        totalPages={totalPages}
+                        totalRecords={totalPlanets}
+                        handlePageChange={setPage}
+                        assetType="planets"
+                    />
+                </>
+            )}
+
         </div>
     );
-  };
-  
-  export default Planets;
+};
+
+export default Planets;
