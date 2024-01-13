@@ -15,13 +15,6 @@
         cursor: not-allowed;
     }
 
-    &:hover {
-        &:not([disabled]) {
-            background-color: $darkBlue;
-        }
-    } 
-
-
     &--as-link {
         background: none;
         border-radius: 0;
@@ -30,5 +23,13 @@
         font: inherit;
         cursor: pointer;
         outline: inherit; 
+    }
+
+    @media only screen and (min-width: $tablet) {
+        &:hover {
+            &:not([disabled]) {
+                background-color: $darkBlue;
+            }
+        } 
     }
 }
