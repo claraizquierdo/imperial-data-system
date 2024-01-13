@@ -2,6 +2,7 @@ const BASE_URL = "https://www.swapi.tech/api";
 
 export const getPlanets = async (page, pageSize) => {
     try {
+        console.log("In the original getPlanets")
         const response = await fetch(`${BASE_URL}/planets?page=${page}&limit=${pageSize}`);
         const data = await response.json();
 
@@ -23,7 +24,7 @@ export const getPlanets = async (page, pageSize) => {
 
 export const getStarships = async () => {
     try {
-        const response = await fetch(`${BASE_URL}/starships?page=!&limit=10`);
+        const response = await fetch(`${BASE_URL}/starships?page=1&limit=16`);
         const data = await response.json();
 
         const fetchArray = data.results.map(ship => fetch(ship.url));

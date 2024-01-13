@@ -6,7 +6,7 @@ import '../css/components/Starships.scss';
 
 import { useState, useEffect, useMemo } from 'react';
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 8;
 const ORDER_OPTIONS = [
     { value: "none", label: "None" },
     { value: "cargo", label: "Cargo capacity" },
