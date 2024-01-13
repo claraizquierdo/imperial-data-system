@@ -1,14 +1,40 @@
+@import '../base/variables';
+
 .loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 400px; /* Set a specific height or adjust as needed */
     width: 100%;
+    height: calc(100vh - 240px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    &__spinner {
+        width: 64px;
+        height: 64px;
+        border: 8px solid;
+        border-color: $primary transparent $primary transparent;
+        border-radius: 50%;
+        animation: spin-anim 1.2s linear infinite;
+    }
 
     span {
         font-size: 16px;
         margin-left: 8px;
-      }
-  }
-  
-  
+        margin-top: 8px;
+    }
+
+    @media only screen and (min-width: $tablet) {
+        min-height: calc(100vh - 200px);
+     }
+}
+
+@keyframes spin-anim {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,6 +1,8 @@
 @import '../base/variables';
 
 .starships {
+    min-height: calc(100vh - 186px);
+
     &__title,
     &__filters {
         margin-left: 20px;
@@ -14,5 +16,6 @@
 
     @media only screen and (min-width: $tablet) {
         flex-grow: 1;
+        min-height: calc(100vh - 120px);
      }
 }

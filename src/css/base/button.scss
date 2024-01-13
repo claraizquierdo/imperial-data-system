@@ -1,5 +1,7 @@
+@import 'variables';
+
 .button {
-    background-color: #007bff;
+    background-color: $primary;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -14,13 +16,16 @@
     }
 
     &:hover {
-        background-color: #0056b3;
-    }
+        &:not([disabled]) {
+            background-color: $darkBlue;
+        }
+    } 
 
 
     &--as-link {
         background: none;
-        color: #1434A4;
+        border-radius: 0;
+        color: $primary;
         border: none;
         font: inherit;
         cursor: pointer;
