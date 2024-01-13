@@ -1,27 +1,11 @@
 @import '../base/variables';
 
 .main {
-  margin: 0 24px;
 
   @media only screen and (min-width: $tablet) {
     align-items: stretch;
     display: flex;
     margin: 0;
-  }
-}
-
-.footer {
-  align-items: center;
-  background-color: $dark;
-  color: white;
-  display: flex;
-  height: 40px;
-  justify-content: flex-end;
-  padding-right: 24px;
-
-  .link {
-    display: inline-block;
-    margin: 0 4px;
   }
 }
 

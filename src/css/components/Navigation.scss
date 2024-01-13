@@ -1,8 +1,9 @@
 @import '../base/variables';
 
 .navigation {
-    padding-bottom: 12px;
-    padding-top: 12px;
+    background-color: $ligthBlue;
+    border-bottom: 2px solid $lightGrey;
+    padding: 12px 24px;
 
     ul {
         display: flex;
@@ -27,6 +28,7 @@
     }
 
     @media only screen and (min-width: $tablet) {
+        background-color: transparent;
         border-right: 2px solid $lightGrey;
         flex-shrink: 0;
         padding: 24px 0 0;
