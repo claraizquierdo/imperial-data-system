@@ -24,7 +24,7 @@ export const getPlanets = async (page, pageSize) => {
 
 export const getStarships = async () => {
     try {
-        const response = await fetch(`${BASE_URL}/starships?page=1&limit=16`);
+        const response = await fetch(`${BASE_URL}/starships?page=1&limit=36`);
         const data = await response.json();
 
         const fetchArray = data.results.map(ship => fetch(ship.url));
